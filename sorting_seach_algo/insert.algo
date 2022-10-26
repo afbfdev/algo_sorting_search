@@ -1,0 +1,17 @@
+ALGORITHM shortbyInsertion
+VAR
+    handA : ARRAY_OF integer[5];
+    handB : ARRAY_OF integer[5];
+    var i , n : integer := 0 ;
+BEGIN
+    FOR i FROM 0 TO handA.length-1 STEP 1  DO 
+    IF (handA.length = 0) THEN
+        break
+    END_IF
+    n := handA[i+1]
+    IF (handA[i] > n) THEN
+        handB[n]
+    END_IF
+    END_FOR
+    write(handB)
+END
