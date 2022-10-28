@@ -1,17 +1,15 @@
-ALGORITHM shortbyInsertion
+//---Sort selection---//
+ALGORITHM selection_sort_array
 VAR
-    handA : ARRAY_OF integer[5];
-    handB : ARRAY_OF integer[5];
-    var i , n : integer := 0 ;
+    tab : ARRAY_OF INTEGER[];
 BEGIN
-    FOR i FROM 0 TO handA.length-1 STEP 1  DO 
-    IF (handA.length = 0) THEN
-        break
-    END_IF
-    n := handA[i+1]
-    IF (handA[i] > n) THEN
-        handB[n]
-    END_IF
+    FOR i FROM 0 TO tab.lenght-1 STEP 1  DO
+        FOR j FROM i+1 TO tab.lenght-1 STEP 1  DO
+            IF (tab[i] < tab[j]) THEN
+                temp := tab[i] // inverser --> variable temporel pour pas perdre la valeur de tab[i]
+                tab[i] := tab[j]
+                tab[j] := temp
+            END_IF
+        END_FOR
     END_FOR
-    write(handB)
 END
