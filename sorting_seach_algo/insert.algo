@@ -1,15 +1,16 @@
-//---Sort selection---//
-ALGORITHM selection_sort_array
+ALGORITHM sortbyInsertion
 VAR
-    tab : ARRAY_OF INTEGER[];
+    tab : ARRAY_OF integer[];
+    
 BEGIN
-    FOR i FROM 0 TO tab.lenght-1 STEP 1  DO
-        FOR j FROM i+1 TO tab.lenght-1 STEP 1  DO
-            IF (tab[i] < tab[j]) THEN
-                temp := tab[i] // inverser --> variable temporel pour pas perdre la valeur de tab[i]
-                tab[i] := tab[j]
-                tab[j] := temp
-            END_IF
-        END_FOR
-    END_FOR
+   FOR i FROM 0 TO tab.lenght-1 STEP 1  DO
+    key := tab[i];
+    j := i - 1; 
+
+        while(j >= 0 && tab[j] > key){
+            tab[j + 1] = tab[j];
+            j = j - 1;
+        }    
+    tab[j + 1] = key;
+   END_FOR
 END
